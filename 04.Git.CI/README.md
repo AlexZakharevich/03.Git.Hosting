@@ -14,4 +14,5 @@ Hello, GitHub Actions!
 * test_calculator.py - unit-тесты для программы calculator.py
 * test_for_calculator.yml - workflow, который запускает тесты test_calculator.py при каждом push
 
-![alt text](image.png)
+<img width="644" height="69" alt="image" src="https://github.com/user-attachments/assets/737bab53-4f84-44bf-bd1b-62ed479482f1" />
+
