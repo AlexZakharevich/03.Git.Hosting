@@ -24,4 +24,4 @@ jobs:
 
       # 3. Запускаем скрипт
       - name: Run script hello.py
-        run: python hello.py
+        run: python 04.Git.CI/hello.py
