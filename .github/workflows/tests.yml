@@ -24,7 +24,7 @@ jobs:
       
       - name: Run tests
         run: |
-          python -m unittest 04.Git.CI/test_calculator.py -v
+          python -m unittest "04.Git.CI/test_calculator.py" -v
       
       - name: Report result
         run: |
