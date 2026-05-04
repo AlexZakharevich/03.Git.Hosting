@@ -1,27 +1,36 @@
 # Имя workflow, отображается во вкладке Actions
-name: Hello GitHub Actions 2
+name: Tests Calculator
 
 # Триггер: запускать при каждом пуше в ветку master
 on:
   push:
-    branches: [ "master" ]
+    branches: [master]
 
 jobs:
-  run-hello-script:
+  test:
     # Запускаем на виртуальной машине с Ubuntu
     runs-on: ubuntu-latest
-
+    
     steps:
       # 1. Скачиваем код репозитория в рабочую директорию раннера
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # 2. Настраиваем Python
-      - name: Install Python
+      
+      # 2. Настраиваем Python  
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.14'
-
-      # 3. Запускаем скрипт
-      - name: Run script hello.py
-        run: python 04.Git.CI/hello.py
+      
+      - name: Run tests
+        run: |
+          python -m unittest 04.Git.CI/test_calculator.py -v
+      
+      - name: Report result
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "✅ All tests passed!"
+          else
+            echo "❌ Some tests failed!"
+            exit 1
+          fi
