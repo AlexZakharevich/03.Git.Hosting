@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  test:
+  test-for-calculator:
     # Запускаем на виртуальной машине с Ubuntu
     runs-on: ubuntu-latest
     
